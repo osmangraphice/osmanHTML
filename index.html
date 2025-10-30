@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Osman Graphice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* --- 1. SYSTEM THEME SETUP --- */
+        
+        /* Light Theme (Default) */
+        :root {
+            --primary: #007BFF;
+            --secondary: #6c757d;
+            --bg-color: #ffffff;
+            --text-color: #2c3e50;
+            --card-bg: #ffffff;
+            --border-color: #e9ecef;
+            --shadow-color: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --glow-shadow: 0 10px 40px -10px rgba(0, 123, 255, 0.15);
+            --gradient-text: linear-gradient(135deg, #007BFF, #0056b3);
+            --profile-border: linear-gradient(135deg, #007BFF, #0056b3);
+        }
+
+        /* Dark Theme - Automatically applied based on system preference */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #4dabf7;
+                --secondary: #adb5bd;
+                --bg-color: #1a1d23;
+                --text-color: #e9ecef;
+                --card-bg: #2d333b;
+                --border-color: #444c56;
+                --shadow-color: 0 8px 30px rgba(0, 0, 0, 0.3);
+                --glow-shadow: 0 10px 40px -10px rgba(77, 171, 247, 0.2);
+                --gradient-text: linear-gradient(135deg, #4dabf7, #339af0);
+                --profile-border: linear-gradient(135deg, #4dabf7, #339af0);
+            }
+        }
+
+        /* --- General Setup --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        html { 
+            scroll-behavior: smooth; 
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            min-height: 100vh;
+        }
+
+        .container { 
+            max-width: 1200px; 
+            width: 100%;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* --- Profile Section --- */
+        .profile-section { 
+            text-align: center; 
+            margin-bottom: 80px; 
+            padding: 60px 0 40px;
+        }
+        
+        .profile-pic-container { 
+            position: relative; 
+            width: 200px; 
+            height: 200px; 
+            margin: 0 auto 30px; 
+            border-radius: 50%; 
+            padding: 8px; 
+            background: var(--profile-border); 
+            box-shadow: var(--shadow-color); 
+            transition: transform 0.3s ease-in-out; 
+        }
+        
+        .profile-pic-container:hover { 
+            transform: translateY(-8px) scale(1.05); 
+        }
+        
+        .profile-pic { 
+            width: 100%; 
+            height: 100%; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 4px solid var(--bg-color); 
+        }
+        
+        .profile-name { 
+            font-family: 'Montserrat', sans-serif; 
+            font-size: 3.2rem; 
+            font-weight: 700; 
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px; 
+            letter-spacing: 1px; 
+        }
+        
+        .profile-tagline {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .online-status { 
+            display: inline-flex; 
+            align-items: center; 
+            font-size: 1rem; 
+            color: #28a745; 
+            font-weight: 500; 
+            background: rgba(40, 167, 69, 0.1); 
+            padding: 10px 22px; 
+            border-radius: 50px; 
+            margin-bottom: 30px; 
+            border: 1px solid rgba(40, 167, 69, 0.2); 
+        }
+        
+        .online-dot { 
+            width: 10px; 
+            height: 10px; 
+            background-color: #28a745; 
+            border-radius: 50%; 
+            margin-right: 10px; 
+            animation: blink 1.5s infinite; 
+        }
+        
+        @keyframes blink { 
+            50% { 
+                opacity: 0.5; 
+            } 
+        }
+
+        /* --- Section Titles --- */
+        .section-title { 
+            text-align: center; 
+            font-size: 2.4rem; 
+            margin-bottom: 50px; 
+            color: var(--text-color); 
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* --- Cards --- */
+        .card { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 20px; 
+            padding: 50px; 
+            margin-bottom: 80px; 
+            box-shadow: var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glow-shadow);
+        }
+        
+        .card h3 { 
+            color: var(--primary); 
+            margin-bottom: 20px; 
+            font-size: 1.6rem; 
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .card p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+        
+        /* --- Services Section --- */
+        #services { 
+            margin-bottom: 80px; 
+        }
+        
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 30px; 
+        }
+        
+        .service-card { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 20px; 
+            padding: 40px; 
+            box-shadow: var(--shadow-color); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            text-align: center;
+        }
+        
+        .service-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: var(--glow-shadow); 
+        }
+        
+        .service-icon { 
+            font-size: 3rem; 
+            color: var(--primary); 
+            margin-bottom: 25px; 
+        }
+        
+        .service-card h3 { 
+            font-size: 1.5rem; 
+            color: var(--primary); 
+            margin-bottom: 15px; 
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .service-card p { 
+            font-size: 1rem; 
+            color: var(--secondary);
+            line-height: 1.6;
+        }
+        
+        /* --- Skills Section --- */
+        #skills-showcase { 
+            margin-bottom: 80px; 
+        }
+        
+        .skills-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+            gap: 25px; 
+            text-align: center; 
+        }
+        
+        .skill-item { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            padding: 30px 20px; 
+            border-radius: 16px; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            box-shadow: var(--shadow-color);
+        }
+        
+        .skill-item:hover { 
+            transform: translateY(-8px) scale(1.05); 
+            box-shadow: var(--glow-shadow); 
+        }
+        
+        .skill-item i { 
+            font-size: 3rem; 
+            margin-bottom: 15px; 
+            color: var(--primary);
+        }
+        
+        .skill-item span { 
+            font-size: 1rem; 
+            font-weight: 500; 
+            color: var(--text-color);
+        }
+        
+        /* --- Skill Progress Section --- */
+        .skill-progress-section {
+            margin-bottom: 80px;
+        }
+        
+        .progress-container {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: var(--shadow-color);
+            border: 1px solid var(--border-color);
+        }
+        
+        .progress-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: var(--primary);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .skill-progress-item {
+            margin-bottom: 35px;
+        }
+        
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .skill-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        
+        .skill-percentage {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            background: rgba(0, 123, 255, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            min-width: 60px;
+            text-align: center;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: 10px;
+            background: var(--profile-border);
+            width: 0%;
+            transition: width 1.5s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255,255,255,0.4) 50%, 
+                transparent 100%);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        /* --- About Developer Section --- */
+        .about-developer { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-left: 6px solid var(--primary); 
+            border-radius: 20px; 
+            padding: 50px; 
+            margin: 80px 0; 
+            box-shadow: var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .about-developer:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glow-shadow);
+        }
+        
+        .about-developer h3 { 
+            font-size: 1.5rem; 
+            color: var(--primary); 
+            margin-bottom: 30px; 
+            border-bottom: 2px solid var(--border-color); 
+            padding-bottom: 15px; 
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .info-item, .skill-description { 
+            display: flex; 
+            align-items: flex-start; 
+            margin-bottom: 20px; 
+        }
+        
+        .info-item i, .skill-description i { 
+            color: var(--primary); 
+            font-size: 1.3rem; 
+            margin-right: 20px; 
+            width: 24px; 
+            text-align: center; 
+            flex-shrink: 0; 
+            margin-top: 3px; 
+        }
+        
+        .info-item strong { 
+            font-weight: 600; 
+            color: var(--text-color); 
+            margin-right: 8px; 
+        }
+        
+        .info-item a { 
+            color: var(--primary); 
+            text-decoration: none; 
+            transition: all 0.3s ease; 
+            border-bottom: 1px dashed transparent; 
+            font-weight: 500;
+        }
+        
+        .info-item a:hover { 
+            color: var(--primary); 
+            border-bottom-color: var(--primary); 
+        }
+        
+        /* --- Social Connections --- */
+        #social-connections { 
+            margin-bottom: 60px; 
+        }
+        
+        .social-links { 
+            display: flex; 
+            justify-content: center; 
+            gap: 20px; 
+            flex-wrap: wrap; 
+        }
+        
+        .social-icon { 
+            width: 60px; 
+            height: 60px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 1.8rem; 
+            color: white; 
+            border-radius: 50%; 
+            text-decoration: none; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            box-shadow: var(--shadow-color);
+        }
+        
+        .social-icon:hover { 
+            transform: translateY(-8px) scale(1.1); 
+            box-shadow: var(--glow-shadow); 
+        }
+        
+        .telegram { background: linear-gradient(135deg, #0088cc, #0077b5); }
+        .whatsapp { background: linear-gradient(135deg, #25D366, #128C7E); }
+        .facebook { background: linear-gradient(135deg, #1877F2, #166FE5); }
+        .messenger { background: linear-gradient(135deg, #006AFF, #0051D4); }
+        .youtube { background: linear-gradient(135deg, #FF0000, #CC0000); }
+        .website { background: linear-gradient(135deg, #667eea, #764ba2); }
+        
+        /* --- Footer --- */
+        footer { 
+            text-align: center; 
+            padding: 40px 0; 
+            font-size: 1rem; 
+            color: var(--secondary); 
+            margin-top: 60px; 
+            border-top: 1px solid var(--border-color); 
+        }
+        
+        .footer-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        /* --- Mobile Responsive --- */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .profile-name { 
+                font-size: 2.5rem; 
+            }
+            
+            .profile-tagline {
+                font-size: 1.1rem;
+            }
+            
+            .services-grid { 
+                grid-template-columns: 1fr; 
+            }
+            
+            .card {
+                padding: 30px 25px;
+            }
+            
+            .progress-container {
+                padding: 30px 25px;
+            }
+            
+            .about-developer {
+                padding: 30px 25px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .profile-pic-container {
+                width: 180px;
+                height: 180px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-name {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .social-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .progress-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <section class="profile-section" id="profile">
+            <div class="profile-pic-container">
+                <img alt="Osman Graphice" class="profile-pic" src="https://i.ibb.co/dwRf5wg5/980630bb97d1.jpg" />
+            </div>
+            <h2 class="profile-name">Osman Graphice</h2>
+            <p class="profile-tagline">Freelancer & Developer | Creating digital experiences that matter</p>
+            <div class="online-status">
+                <div class="online-dot"></div>
+                <span>Available for projects</span>
+            </div>
+        </section>
+        
+        <section id="my-story">
+            <h2 class="section-title">My Journey</h2>
+            <div class="card">
+                <h3>A Path of Creativity and Development</h3>
+                <p>Hello! আমি *ওসমান গ্রাফিক্স, একজন **ফ্রিল্যান্সার* এবং *ডেভেলপার* হিসেবে আপনাদের সামনে উপস্থিত হয়েছি। আমি সবসময়ই নতুন কিছু শেখা এবং মানুষের জন্য সৃজনশীল কিছু তৈরি করার প্রতি আগ্রহী ছিলাম। আমার যাত্রা শুরু হয় *ডিজিটাল মার্কেটিং* এবং *গ্রাফিক ডিজাইনের* প্রতি ভালোবাসা থেকে। এরপর আমি *ওয়েব ডিজাইন* এবং *অ্যাপ ডেভেলপমেন্টের* মতো আরও উন্নত দক্ষতা অর্জন করি।</p>
+                <p>আমার লক্ষ্য হলো আমার দক্ষতা ব্যবহার করে ক্লায়েন্টদের জন্য *কার্যকর এবং নান্দনিক সমাধান* তৈরি করা। প্রতিটি প্রজেক্টকে আমি একটি চ্যালেঞ্জ হিসেবে দেখি, যেখানে আমি নতুনত্ব এবং দক্ষতার সমন্বয় ঘটিয়ে সেরা ফলাফল দেওয়ার চেষ্টা করি। আমি বিশ্বাস করি, সততা এবং কঠোর পরিশ্রমের মাধ্যমে যেকোনো লক্ষ্য অর্জন করা সম্ভব।</p>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2 class="section-title">My Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Digital Marketing</h3>
+                    <p>I create data-driven strategies to boost your online presence, drive targeted traffic, and increase conversions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-palette"></i></div>
+                    <h3>Graphic Design</h3>
+                    <p>I deliver creative visuals that capture attention and communicate your message effectively.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h3>Web Design</h3>
+                    <p>I design modern, responsive, and user-friendly websites that are optimized for performance and SEO.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Apps Development</h3>
+                    <p>I turn your ideas into functional, scalable, and engaging mobile apps for iOS and Android.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills-showcase">
+            <h2 class="section-title">Tools & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fas fa-bullhorn"></i><span>Digital Marketing</span></div>
+                <div class="skill-item"><i class="fas fa-handshake"></i><span>Freelancing</span></div>
+                <div class="skill-item"><i class="fas fa-laptop-code"></i><span>Developer</span></div>
+                <div class="skill-item"><i class="fas fa-mobile-alt"></i><span>App Development</span></div>
+                <div class="skill-item"><i class="fas fa-paint-brush"></i><span>Designing</span></div>
+                <div class="skill-item"><i class="fas fa-video"></i><span>Video Editing</span></div>
+            </div>
+        </section>
+        
+        <section class="skill-progress-section">
+            <h2 class="section-title">Skill Level</h2>
+            <div class="progress-container">
+                <h3 class="progress-title">My Expertise Level</h3>
+                
+                <div class="skill-progress-item" data-progress="85">
+                    <div class="skill-header">
+                        <span class="skill-name">Web Design</span>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="web-design-progress"></div>
+                    </div>
+                </div>
+
+                <div class="skill-progress-item" data-progress="95">
+                    <div class="skill-header">
+                        <span class="skill-name">Graphic Design</span>
+                        <span class="skill-percentage">95%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="graphic-design-progress"></div>
+                    </div>
+                </div>
+                
+                 <div class="skill-progress-item" data-progress="70">
+                    <div class="skill-header">
+                        <span class="skill-name">Digital Marketing</span>
+                        <span class="skill-percentage">70%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="digital-marketing-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-developer">
+            <h3>About the Developer</h3>
+            <div class="info-item">
+                <i class="fas fa-user-circle"></i>
+                <p><strong>Name:</strong> Osman Graphice</p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <p><strong>Email:</strong> <a href="mailto:osmangraphice@gmail.com">osmangraphice@gmail.com</a></p>
+            </div>
+            <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p><strong>Location:</strong> Bangladesh</p>
+            </div>
+            <div class="skill-description">
+                <i class="fas fa-lightbulb"></i>
+                <p>Dedicated to clean code, responsive design, and user-centric solutions in both web and mobile development.</p>
+            </div>
+        </section>
+        
+        <section id="social-connections">
+            <h2 class="section-title">Get Connected</h2>
+            <div class="social-links">
+                <a href="#" class="social-icon telegram" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#" class="social-icon whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-icon facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon messenger" aria-label="Messenger"><i class="fab fa-facebook-messenger"></i></a>
+                <a href="#" class="social-icon youtube" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon website" aria-label="Personal Website"><i class="fas fa-globe"></i></a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="footer-brand">Osman Graphice</div>
+        <p>&copy; 2024 All rights reserved. Developed with passion and code.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const progressItems = document.querySelectorAll('.skill-progress-item');
+
+            // Function to handle progress animation
+            function animateProgress(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const progressContainer = entry.target;
+                        const percentage = progressContainer.getAttribute('data-progress');
+                        const progressFill = progressContainer.querySelector('.progress-fill');
+                        
+                        // Apply the width after a slight delay to ensure the CSS transition works
+                        setTimeout(() => {
+                            progressFill.style.width = percentage + '%';
+                        }, 100);
+
+                        // Stop observing once animation starts
+                        observer.unobserve(progressContainer);
+                    }
+                });
+            }
+
+            // Set up Intersection Observer for performance
+            const observer = new IntersectionObserver(animateProgress, {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.1 // animation starts when 10% of the element is visible
+            });
+
+            progressItems.forEach(item => {
+                observer.observe(item);
+            });
+            
+            // NOTE: Add code here later if you want a manual Light/Dark mode toggle button
+        });
+    </script>
+
+</body>
+</html>
