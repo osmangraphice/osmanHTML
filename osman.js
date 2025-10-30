@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="AHAMED RAHIM - Portfolio. Modding, bot making, APK editing, automation." />
+  <title>AHAMED RAHIM - PORTFOLIO</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Reset & basics */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; font-family: 'Poppins', sans-serif; color: #fff; }
+    body { background: #000; overflow: auto; }
+
+    /* Background video */
+    video {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+    }
+    .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: -1; }
+
+    /* Page container */
+    .container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    /* Card */
+    .card {
+      background: rgba(255,255,255,0.06);
+      border-radius: 18px;
+      padding: 32px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.12);
+      text-align: center;
+      max-width: 1000px;
+      width: 100%;
+      animation: fadeIn 1s ease forwards;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    .profile-pic {
+      width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.9); margin: 0 auto 18px; display: block;
+    }
+
+    h1 { font-size: 2.2rem; margin-bottom: 6px; letter-spacing: 1px; }
+    p.lead { font-size: 1.05rem; margin-bottom: 16px; color: #e6eef8; }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 18px;
+      text-align: left;
+    }
+    .info-box h2 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      padding-bottom: 6px;
+    }
+    .info-box ul { list-style: none; line-height: 1.8; padding: 0; margin: 0; color: #dbeeff; }
+    .info-box li::before { content: "› "; color: #00c6ff; margin-right: 6px; }
+
+    /* Social links */
+    .social-links {
+      margin-top: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: flex-start;
+    }
+    .social-links a {
+      width: 46px;
+      height: 46px;
+      background: #0a0a0a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.15rem;
+      transition: all 0.28s ease;
+      text-decoration: none;
+    }
+    .social-links a:hover {
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,198,255,0.22);
+    }
+
+    .telegram-btn {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 22px;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      border-radius: 50px;
+      color: white;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+
+    footer { margin-top: 20px; font-size: 0.95rem; color: #c8d6e5; text-align: center; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .info-grid { grid-template-columns: 1fr; }
+      .social-links { justify-content: flex-start; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Video (optional) -->
+  <video autoplay muted loop playsinline poster="bg-poster.jpg" aria-hidden="true">
+    <source src="bg.mp4" type="video/mp4" />
+  </video>
+  <div class="overlay" aria-hidden="true"></div>
+
+  <!-- Content -->
+  <main class="container" role="main" aria-label="Portfolio">
+    <section class="card" aria-labelledby="name-heading">
+      <img src="file.png" alt="AHAMED RAHIM profile picture" class="profile-pic" />
+
+      <h1 id="name-heading">AHAMED RAHIM</h1>
+      <p class="lead">Hi! I'm <strong>AHAMED RAHIM</strong> — Modder &amp; Developer.</p>
+
+      <div class="info-grid">
+        <!-- About -->
+        <div class="info-box" aria-labelledby="about-heading">
+          <h2 id="about-heading">About Me</h2>
+          <ul>
+            <li><strong>Country:</strong> Bangladesh</li>
+            <li><strong>Age:</strong> 16+</li>
+            <li><strong>Class:</strong> 10</li>
+            <li><strong>Hobbies:</strong> Traveling, Gaming, Creating something new, Helping</li>
+          </ul>
+        </div>
+
+        <!-- Skills -->
+        <div class="info-box" aria-labelledby="skills-heading">
+          <h2 id="skills-heading">Skills</h2>
+          <ul>
+            <li>Modding</li>
+            <li>Bot making</li>
+            <li>Hacking, Cracking, Breaking</li>
+            <li>APK Editing</li>
+          </ul>
+        </div>
+
+        <!-- Social Media (right side) -->
+        <div class="info-box" aria-labelledby="social-heading">
+          <h2 id="social-heading">Social Media</h2>
+          <div class="social-links">
+            <a href="https://www.facebook.com/share/1CoN76DVqB/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="https://www.instagram.com/ahamedrahim2.0?igsh=MWxkeWEzOGZxczZ6Mg==" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="https://www.tiktok.com/@al_rahim2.1?_t=ZS-8zsJTaRmPkO&_r=1" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+
+            <a href="https://x.com/AhamedRahi87901?t=GiRl2p2-CQir4kKUNKDYdg&s=09" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+              <i class="fab fa-x-twitter"></i>
+            </a>
+
+            <a href="https://github.com/ahamedrahim" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+
+            <!-- Email left as placeholder; change if you want an actual mailto: -->
+            <a href="mailto:youremail@example.com" aria-label="Email">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;">
+        <a href="https://t.me/ModAppHubXJS" class="telegram-btn" target="_blank" rel="noopener noreferrer">@ModAppHubXJS</a>
+      </div>
+
+      <footer>© 2025 AHAMED RAHIM. All rights reserved.</footer>
+    </section>
+  </main>
+
+</body>
+</html>
